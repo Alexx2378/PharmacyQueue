@@ -29,6 +29,7 @@ namespace PharmacyQueue
         {
             InitializeComponent();
             this.adminFormInstance = adminForm;
+            this.StartPosition = FormStartPosition.CenterScreen; 
         }
 
         // Regular queue button click handler
@@ -52,6 +53,7 @@ namespace PharmacyQueue
             customerNum.Text = queueNumber;
             AddToShortestQueue(queueNumber, isPriority);
         }
+
         public void RefreshDisplays()
         {
             // Reset the customer number display
@@ -76,20 +78,7 @@ namespace PharmacyQueue
                 return;
             }
             
-            List<string> targetQueue;
-            
-            if (counter1Count <= counter2Count && counter1Count <= counter3Count && counter1Count < MAX_QUEUE_SIZE)
-            {
-                targetQueue = counter1Queue;
-            }
-            else if (counter2Count <= counter3Count && counter2Count < MAX_QUEUE_SIZE)
-            {
-                targetQueue = counter2Queue;
-            }
-            else
-            {
-                targetQueue = counter3Queue;
-            }
+            List<string> targetQueue = GetShortestQueue();
             
             if (isPriority)
             {
@@ -103,9 +92,28 @@ namespace PharmacyQueue
             UpdateAdminForm();
         }
 
+        private List<string> GetShortestQueue()
+        {
+            int counter1Count = counter1Queue.Count;
+            int counter2Count = counter2Queue.Count;
+            int counter3Count = counter3Queue.Count;
+            
+            if (counter1Count <= counter2Count && counter1Count <= counter3Count && counter1Count < MAX_QUEUE_SIZE)
+            {
+                return counter1Queue;
+            }
+            else if (counter2Count <= counter3Count && counter2Count < MAX_QUEUE_SIZE)
+            {
+                return counter2Queue;
+            }
+            else
+            {
+                return counter3Queue;
+            }
+        }
+
         private async void UpdateAdminForm()
         {
-            await Task.Delay(100); // Small delay to ensure stability
             adminFormInstance?.UpdateQueueDisplays(counter1Queue, counter2Queue, counter3Queue);
         }
 
@@ -113,7 +121,7 @@ namespace PharmacyQueue
         {
             UpdateAdminForm();
             adminFormInstance.Show();
-            this.Close();  // Use Close() instead of Hide()
+            this.Hide();
         }
         
         public static void UpdateCounter1Queue(List<string> newQueue)
@@ -138,24 +146,27 @@ namespace PharmacyQueue
             {
                 return;
             }
-
+        
             // Ensure UI updates happen on the UI thread
             if (this.InvokeRequired)
             {
                 this.Invoke(new Action(() => UpdateNowServingLabel(counter, number)));
                 return;
             }
-
+        
             switch(counter)
             {
                 case 1:
                     nowServctmr1.Text = number;
+                    if (!string.IsNullOrEmpty(number)) HighlightNowServing(1);
                     break;
                 case 2:
                     nowServctmr2.Text = number;
+                    if (!string.IsNullOrEmpty(number)) HighlightNowServing(2);
                     break;
                 case 3:
                     nowServctmr3.Text = number;
+                    if (!string.IsNullOrEmpty(number)) HighlightNowServing(3);
                     break;
             }
         }
@@ -177,10 +188,10 @@ namespace PharmacyQueue
             // Initialize any required form settings or data
             customerNum.Text = "Number";  // Set default text
 
-            // Clear any existing queue data when form loads
-            counter1Queue.Clear();
-            counter2Queue.Clear();
-            counter3Queue.Clear();
+            // Remove the queue clearing code to preserve existing queue data
+            // counter1Queue.Clear();
+            // counter2Queue.Clear();
+            // counter3Queue.Clear();
 
             // Synchronize Now Serving labels with admin form if available
             if (adminFormInstance != null && !adminFormInstance.IsDisposed)
@@ -189,12 +200,17 @@ namespace PharmacyQueue
                 nowServctmr2.Text = adminFormInstance.nowServ2.Text;
                 nowServctmr3.Text = adminFormInstance.nowServ3.Text;
             }
+
+            // Set the form to start at the center of the screen
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void nowServctmr1_Click(object sender, EventArgs e)
         {
-
+            // This event handler is required by the designer
+            // You can leave it empty if no specific action is needed
         }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -213,5 +229,49 @@ namespace PharmacyQueue
                 }
             }
         }
+
+        public void HighlightNowServing(int counter)
+        {
+            Control control = null;
+            switch (counter)
+            {
+                case 1:
+                    control = nowServctmr1;
+                    break;
+                case 2:
+                    control = nowServctmr2;
+                    break;
+                case 3:
+                    control = nowServctmr3;
+                    break;
+            }
+
+            if (control != null)
+            {
+                Timer blinkTimer = new Timer();
+                int blinkCount = 0;
+
+                blinkTimer.Interval = 500; // Set the interval to 500 milliseconds
+                blinkTimer.Tick += (s, args) =>
+                {
+                    if (blinkCount == 5)
+                    {
+                        control.BackColor = SystemColors.Control; // Reset to default color
+                        blinkTimer.Stop();
+                        blinkTimer.Dispose();
+                    }
+                    else
+                    {
+                        control.BackColor = control.BackColor == Color.Yellow ? SystemColors.Control : Color.Yellow;
+                        blinkCount++;
+                    }
+                };
+
+                blinkTimer.Start();
+            }
+        }
+
+
     }
 }
+

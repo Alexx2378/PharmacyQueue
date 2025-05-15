@@ -18,6 +18,7 @@ namespace PharmacyQueue
         public Home()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Center the form on the screen
         }
 
         // Add this method to your Form1.cs class
@@ -162,6 +163,7 @@ namespace PharmacyQueue
             }
         }
 
+        // Call this method in your takeOrderC1_Click, takeOrderC2_Click, and takeOrderC3_Click_1 methods
         private void takeOrderC1_Click(object sender, EventArgs e)
         {
             if (this.IsDisposed || !this.IsHandleCreated)
@@ -191,6 +193,7 @@ namespace PharmacyQueue
                 nowServ1.Text = nextCustomer;
                 PlayDingSound();
                 SpeakNowServing(nextCustomer, 1);
+                HighlightNowServing(1); // <-- Add this line here
                 
                 // Remove the customer from the list
                 counter1ListBox.Items.RemoveAt(0);
@@ -202,6 +205,7 @@ namespace PharmacyQueue
                 if (customerFormInstance != null && !customerFormInstance.IsDisposed && customerFormInstance.IsHandleCreated)
                 {
                     customerFormInstance.UpdateNowServingLabel(1, nextCustomer);
+                    customerFormInstance.HighlightNowServing(1); // <-- Add this line
                 }
             }
             else
@@ -238,6 +242,7 @@ namespace PharmacyQueue
                 nowServ2.Text = nextCustomer;
                 PlayDingSound();
                 SpeakNowServing(nextCustomer, 2);
+                HighlightNowServing(2); // <-- Add this line here
                 
                 counter2ListBox.Items.RemoveAt(0);
                 customerForm.UpdateCounter2Queue(GetListBoxItems(counter2ListBox));
@@ -321,6 +326,7 @@ namespace PharmacyQueue
                 nowServ3.Text = nextCustomer;
                 PlayDingSound();
                 SpeakNowServing(nextCustomer, 3);
+                HighlightNowServing(3); // <-- Add this line here
                 
                 counter3ListBox.Items.RemoveAt(0);
                 customerForm.UpdateCounter3Queue(GetListBoxItems(counter3ListBox));
@@ -365,6 +371,47 @@ namespace PharmacyQueue
                 // No order to complete
                 MessageBox.Show("No active order to complete.", "No Order",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void HighlightNowServing(int counter)
+        {
+            Control control = null;
+            switch (counter)
+            {
+                case 1:
+                    control = nowServ1;
+                    break;
+                case 2:
+                    control = nowServ2;
+                    break;
+                case 3:
+                    control = nowServ3;
+                    break;
+            }
+
+            if (control != null)
+            {
+                Timer blinkTimer = new Timer();
+                int blinkCount = 0;
+
+                blinkTimer.Interval = 500; // Set the interval to 500 milliseconds
+                blinkTimer.Tick += (s, args) =>
+                {
+                    if (blinkCount == 5)
+                    {
+                        control.BackColor = SystemColors.Control; // Reset to default color
+                        blinkTimer.Stop();
+                        blinkTimer.Dispose();
+                    }
+                    else
+                    {
+                        control.BackColor = control.BackColor == Color.Yellow ? SystemColors.Control : Color.Yellow;
+                        blinkCount++;
+                    }
+                };
+
+                blinkTimer.Start();
             }
         }
 
