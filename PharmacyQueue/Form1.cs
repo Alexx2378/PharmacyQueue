@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
 
 namespace PharmacyQueue
 {
     public partial class Home : Form
     {
+        private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         public Home()
         {
             InitializeComponent();
@@ -173,6 +175,7 @@ namespace PharmacyQueue
                 
                 // Update both Now Serving labels
                 nowServ1.Text = nextCustomer;
+                SpeakNowServing(nextCustomer, 1);
                 
                 // Remove the customer from the list
                 counter1ListBox.Items.RemoveAt(0);
@@ -336,6 +339,12 @@ namespace PharmacyQueue
             }
         }
 
+        private void SpeakNowServing(string number, int counter)
+        {
+            synthesizer.SpeakAsync($"Now serving number {number}, please proceed to counter {counter}");
+        }
+
+
         private void compOrderC2_Click_1(object sender, EventArgs e)
         {
             // Check if there's an order to complete
@@ -393,4 +402,3 @@ namespace PharmacyQueue
         }
     }
 }
-
