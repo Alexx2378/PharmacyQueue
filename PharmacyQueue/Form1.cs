@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Synthesis;
+using System.Media;
 
 namespace PharmacyQueue
 {
@@ -148,6 +149,19 @@ namespace PharmacyQueue
 
         }
 
+        private void PlayDingSound()
+        {
+            try
+            {
+                SoundPlayer player = new SoundPlayer("ding-47489.wav"); // Make sure the file is in your output directory
+                player.Play();
+            }
+            catch (Exception ex)
+            {
+                // Optionally handle exceptions (e.g., file not found)
+            }
+        }
+
         private void takeOrderC1_Click(object sender, EventArgs e)
         {
             if (this.IsDisposed || !this.IsHandleCreated)
@@ -175,6 +189,7 @@ namespace PharmacyQueue
                 
                 // Update both Now Serving labels
                 nowServ1.Text = nextCustomer;
+                PlayDingSound();
                 SpeakNowServing(nextCustomer, 1);
                 
                 // Remove the customer from the list
@@ -414,3 +429,6 @@ namespace PharmacyQueue
         }
     }
 }
+
+
+
