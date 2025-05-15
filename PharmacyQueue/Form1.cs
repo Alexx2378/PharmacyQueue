@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
+using System.Media;
 
 namespace PharmacyQueue
 {
     public partial class Home : Form
     {
+        private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         public Home()
         {
             InitializeComponent();
@@ -138,12 +141,25 @@ namespace PharmacyQueue
 
         private void label12_Click(object sender, EventArgs e)
         {
-            // Add any functionality you need here, or leave it empty
+
         }
 
         private void counter1ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void PlayDingSound()
+        {
+            try
+            {
+                SoundPlayer player = new SoundPlayer("ding-47489.wav"); // Make sure the file is in your output directory
+                player.Play();
+            }
+            catch (Exception ex)
+            {
+                // Optionally handle exceptions (e.g., file not found)
+            }
         }
 
         private void takeOrderC1_Click(object sender, EventArgs e)
@@ -173,6 +189,8 @@ namespace PharmacyQueue
                 
                 // Update both Now Serving labels
                 nowServ1.Text = nextCustomer;
+                PlayDingSound();
+                SpeakNowServing(nextCustomer, 1);
                 
                 // Remove the customer from the list
                 counter1ListBox.Items.RemoveAt(0);
@@ -197,6 +215,11 @@ namespace PharmacyQueue
 
         private void takeOrderC2_Click(object sender, EventArgs e)
         {
+            if (this.IsDisposed || !this.IsHandleCreated)
+            {
+                return;
+            }
+
             // First check if there's a current order being processed
             if (!string.IsNullOrWhiteSpace(number2.Text) && number2.Text != "No customers" && number2.Text != "Number")
             {
@@ -213,6 +236,7 @@ namespace PharmacyQueue
                 
                 number2.Text = nextCustomer;
                 nowServ2.Text = nextCustomer;
+                SpeakNowServing(nextCustomer, 2);
                 
                 counter2ListBox.Items.RemoveAt(0);
                 customerForm.UpdateCounter2Queue(GetListBoxItems(counter2ListBox));
@@ -273,6 +297,11 @@ namespace PharmacyQueue
 
         private void takeOrderC3_Click_1(object sender, EventArgs e)
         {
+            if (this.IsDisposed || !this.IsHandleCreated)
+            {
+                return;
+            }
+
             // First check if there's a current order being processed
             if (!string.IsNullOrWhiteSpace(number3.Text) && number3.Text != "No customers" && number3.Text != "Number")
             {
@@ -289,6 +318,7 @@ namespace PharmacyQueue
                 
                 number3.Text = nextCustomer;
                 nowServ3.Text = nextCustomer;
+                SpeakNowServing(nextCustomer, 3);
                 
                 counter3ListBox.Items.RemoveAt(0);
                 customerForm.UpdateCounter3Queue(GetListBoxItems(counter3ListBox));
@@ -335,6 +365,12 @@ namespace PharmacyQueue
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void SpeakNowServing(string number, int counter)
+        {
+            synthesizer.SpeakAsync($"Now serving. number {number}, please proceed to counter {counter}");
+        }
+
 
         private void compOrderC2_Click_1(object sender, EventArgs e)
         {
@@ -393,4 +429,6 @@ namespace PharmacyQueue
         }
     }
 }
+
+
 
