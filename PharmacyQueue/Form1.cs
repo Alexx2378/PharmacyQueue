@@ -140,7 +140,7 @@ namespace PharmacyQueue
 
         private void label12_Click(object sender, EventArgs e)
         {
-            // Add any functionality you need here, or leave it empty
+
         }
 
         private void counter1ListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,6 +200,11 @@ namespace PharmacyQueue
 
         private void takeOrderC2_Click(object sender, EventArgs e)
         {
+            if (this.IsDisposed || !this.IsHandleCreated)
+            {
+                return;
+            }
+
             // First check if there's a current order being processed
             if (!string.IsNullOrWhiteSpace(number2.Text) && number2.Text != "No customers" && number2.Text != "Number")
             {
@@ -216,6 +221,7 @@ namespace PharmacyQueue
                 
                 number2.Text = nextCustomer;
                 nowServ2.Text = nextCustomer;
+                SpeakNowServing(nextCustomer, 2);
                 
                 counter2ListBox.Items.RemoveAt(0);
                 customerForm.UpdateCounter2Queue(GetListBoxItems(counter2ListBox));
@@ -276,6 +282,11 @@ namespace PharmacyQueue
 
         private void takeOrderC3_Click_1(object sender, EventArgs e)
         {
+            if (this.IsDisposed || !this.IsHandleCreated)
+            {
+                return;
+            }
+
             // First check if there's a current order being processed
             if (!string.IsNullOrWhiteSpace(number3.Text) && number3.Text != "No customers" && number3.Text != "Number")
             {
@@ -292,6 +303,7 @@ namespace PharmacyQueue
                 
                 number3.Text = nextCustomer;
                 nowServ3.Text = nextCustomer;
+                SpeakNowServing(nextCustomer, 3);
                 
                 counter3ListBox.Items.RemoveAt(0);
                 customerForm.UpdateCounter3Queue(GetListBoxItems(counter3ListBox));
@@ -341,7 +353,7 @@ namespace PharmacyQueue
 
         private void SpeakNowServing(string number, int counter)
         {
-            synthesizer.SpeakAsync($"Now serving number {number}, please proceed to counter {counter}");
+            synthesizer.SpeakAsync($"Now serving. number {number}, please proceed to counter {counter}");
         }
 
 
