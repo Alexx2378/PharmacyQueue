@@ -50,7 +50,7 @@ private void takeOrderC1_Click(object sender, EventArgs e)
     }
 }
 
-private void takeOrderC2_Click(object sender, EventArgs e)
+private void takeOrderC2_Click(object sender, EventArgs e) void takeOrderC2_Click(object sender, EventArgs e)
 {
     if (this.IsDisposed || !this.IsHandleCreated)
     {

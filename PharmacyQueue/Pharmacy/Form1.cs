@@ -154,7 +154,8 @@ namespace PharmacyQueue
         {
             try
             {
-                SoundPlayer player = new SoundPlayer("C:\\Users\\Formentera\\source\\repos\\PharmacyQueue\\PharmacyQueue\\Pharmacy\\ding-47489.wav"); // Make sure the file is in your output directory
+                // Change the path to the sound file as needed or change the name of the user like Woots -> your name
+                SoundPlayer player = new SoundPlayer("C:\\Users\\Woots\\source\\repos\\PharmacyQueue\\PharmacyQueue\\Pharmacy\\ding-47489.wav"); // Make sure the file is in your output directory
                 player.PlaySync(); // This will block until the sound finishes playing
             }
             catch (Exception ex)
@@ -475,6 +476,11 @@ namespace PharmacyQueue
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
