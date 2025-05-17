@@ -89,10 +89,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.pharmacy);
-            this.panel1.Location = new System.Drawing.Point(-4, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(-3, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1401, 101);
+            this.panel1.Size = new System.Drawing.Size(1051, 82);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -101,10 +100,9 @@
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(415, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(311, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(90, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -116,10 +114,9 @@
             this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label11.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Maroon;
-            this.label11.Location = new System.Drawing.Point(1365, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(1024, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 32);
+            this.label11.Size = new System.Drawing.Size(24, 26);
             this.label11.TabIndex = 1;
             this.label11.Text = "X";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -129,10 +126,9 @@
             this.pharmacy.AutoSize = true;
             this.pharmacy.Font = new System.Drawing.Font("Yu Gothic UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pharmacy.ForeColor = System.Drawing.Color.White;
-            this.pharmacy.Location = new System.Drawing.Point(563, 14);
-            this.pharmacy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pharmacy.Location = new System.Drawing.Point(422, 11);
             this.pharmacy.Name = "pharmacy";
-            this.pharmacy.Size = new System.Drawing.Size(504, 54);
+            this.pharmacy.Size = new System.Drawing.Size(410, 45);
             this.pharmacy.TabIndex = 0;
             this.pharmacy.Text = "Pharmacy Queuing System";
             // 
@@ -144,10 +140,9 @@
             this.panel2.Controls.Add(this.counter2panel);
             this.panel2.Controls.Add(this.counter1panel);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(-4, 96);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(-3, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1397, 631);
+            this.panel2.Size = new System.Drawing.Size(1048, 513);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -157,40 +152,33 @@
             this.panel8.Controls.Add(this.counter3ListBox);
             this.panel8.Controls.Add(this.counter2ListBox);
             this.panel8.Controls.Add(this.counter1ListBox);
-            this.panel8.Location = new System.Drawing.Point(323, 272);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Location = new System.Drawing.Point(242, 221);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1045, 306);
+            this.panel8.Size = new System.Drawing.Size(784, 249);
             this.panel8.TabIndex = 9;
             // 
             // counter3ListBox
             // 
             this.counter3ListBox.FormattingEnabled = true;
-            this.counter3ListBox.ItemHeight = 16;
-            this.counter3ListBox.Location = new System.Drawing.Point(712, -2);
-            this.counter3ListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.counter3ListBox.Location = new System.Drawing.Point(534, -2);
             this.counter3ListBox.Name = "counter3ListBox";
-            this.counter3ListBox.Size = new System.Drawing.Size(332, 308);
+            this.counter3ListBox.Size = new System.Drawing.Size(250, 251);
             this.counter3ListBox.TabIndex = 2;
             // 
             // counter2ListBox
             // 
             this.counter2ListBox.FormattingEnabled = true;
-            this.counter2ListBox.ItemHeight = 16;
-            this.counter2ListBox.Location = new System.Drawing.Point(356, -1);
-            this.counter2ListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.counter2ListBox.Location = new System.Drawing.Point(267, -1);
             this.counter2ListBox.Name = "counter2ListBox";
-            this.counter2ListBox.Size = new System.Drawing.Size(332, 308);
+            this.counter2ListBox.Size = new System.Drawing.Size(250, 251);
             this.counter2ListBox.TabIndex = 1;
             // 
             // counter1ListBox
             // 
             this.counter1ListBox.FormattingEnabled = true;
-            this.counter1ListBox.ItemHeight = 16;
             this.counter1ListBox.Location = new System.Drawing.Point(0, 0);
-            this.counter1ListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.counter1ListBox.Name = "counter1ListBox";
-            this.counter1ListBox.Size = new System.Drawing.Size(332, 308);
+            this.counter1ListBox.Size = new System.Drawing.Size(250, 251);
             this.counter1ListBox.TabIndex = 0;
             this.counter1ListBox.SelectedIndexChanged += new System.EventHandler(this.counter1ListBox_SelectedIndexChanged);
             // 
@@ -201,20 +189,18 @@
             this.counter3panel.Controls.Add(this.takeOrderC3);
             this.counter3panel.Controls.Add(this.compOrderC3);
             this.counter3panel.Controls.Add(this.counter3label);
-            this.counter3panel.Location = new System.Drawing.Point(1035, 32);
-            this.counter3panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.counter3panel.Location = new System.Drawing.Point(776, 26);
             this.counter3panel.Name = "counter3panel";
-            this.counter3panel.Size = new System.Drawing.Size(333, 213);
+            this.counter3panel.Size = new System.Drawing.Size(250, 173);
             this.counter3panel.TabIndex = 8;
             // 
             // number3
             // 
             this.number3.AutoSize = true;
             this.number3.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number3.Location = new System.Drawing.Point(85, 71);
-            this.number3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.number3.Location = new System.Drawing.Point(64, 58);
             this.number3.Name = "number3";
-            this.number3.Size = new System.Drawing.Size(149, 46);
+            this.number3.Size = new System.Drawing.Size(118, 36);
             this.number3.TabIndex = 12;
             this.number3.Text = "Number";
             // 
@@ -223,10 +209,9 @@
             this.takeOrderC3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.takeOrderC3.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.takeOrderC3.ForeColor = System.Drawing.Color.White;
-            this.takeOrderC3.Location = new System.Drawing.Point(16, 155);
-            this.takeOrderC3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.takeOrderC3.Location = new System.Drawing.Point(12, 126);
             this.takeOrderC3.Name = "takeOrderC3";
-            this.takeOrderC3.Size = new System.Drawing.Size(125, 41);
+            this.takeOrderC3.Size = new System.Drawing.Size(94, 33);
             this.takeOrderC3.TabIndex = 11;
             this.takeOrderC3.Text = "Take Order";
             this.takeOrderC3.UseVisualStyleBackColor = false;
@@ -237,10 +222,9 @@
             this.compOrderC3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.compOrderC3.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compOrderC3.ForeColor = System.Drawing.Color.White;
-            this.compOrderC3.Location = new System.Drawing.Point(149, 155);
-            this.compOrderC3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.compOrderC3.Location = new System.Drawing.Point(112, 126);
             this.compOrderC3.Name = "compOrderC3";
-            this.compOrderC3.Size = new System.Drawing.Size(159, 41);
+            this.compOrderC3.Size = new System.Drawing.Size(119, 33);
             this.compOrderC3.TabIndex = 11;
             this.compOrderC3.Text = "Complete Order";
             this.compOrderC3.UseVisualStyleBackColor = false;
@@ -250,10 +234,9 @@
             // 
             this.counter3label.AutoSize = true;
             this.counter3label.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.counter3label.Location = new System.Drawing.Point(32, 16);
-            this.counter3label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.counter3label.Location = new System.Drawing.Point(24, 13);
             this.counter3label.Name = "counter3label";
-            this.counter3label.Size = new System.Drawing.Size(107, 27);
+            this.counter3label.Size = new System.Drawing.Size(88, 21);
             this.counter3label.TabIndex = 7;
             this.counter3label.Text = "Counter 3";
             // 
@@ -264,10 +247,9 @@
             this.counter2panel.Controls.Add(this.takeOrderC2);
             this.counter2panel.Controls.Add(this.compOrderC2);
             this.counter2panel.Controls.Add(this.counter2label);
-            this.counter2panel.Location = new System.Drawing.Point(677, 32);
-            this.counter2panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.counter2panel.Location = new System.Drawing.Point(508, 26);
             this.counter2panel.Name = "counter2panel";
-            this.counter2panel.Size = new System.Drawing.Size(333, 213);
+            this.counter2panel.Size = new System.Drawing.Size(250, 173);
             this.counter2panel.TabIndex = 8;
             this.counter2panel.Paint += new System.Windows.Forms.PaintEventHandler(this.counter2panel_Paint);
             // 
@@ -275,10 +257,9 @@
             // 
             this.number2.AutoSize = true;
             this.number2.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number2.Location = new System.Drawing.Point(88, 71);
-            this.number2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.number2.Location = new System.Drawing.Point(66, 58);
             this.number2.Name = "number2";
-            this.number2.Size = new System.Drawing.Size(149, 46);
+            this.number2.Size = new System.Drawing.Size(118, 36);
             this.number2.TabIndex = 11;
             this.number2.Text = "Number";
             this.number2.Click += new System.EventHandler(this.label12_Click);
@@ -288,10 +269,9 @@
             this.takeOrderC2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.takeOrderC2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.takeOrderC2.ForeColor = System.Drawing.Color.White;
-            this.takeOrderC2.Location = new System.Drawing.Point(20, 155);
-            this.takeOrderC2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.takeOrderC2.Location = new System.Drawing.Point(15, 126);
             this.takeOrderC2.Name = "takeOrderC2";
-            this.takeOrderC2.Size = new System.Drawing.Size(125, 41);
+            this.takeOrderC2.Size = new System.Drawing.Size(94, 33);
             this.takeOrderC2.TabIndex = 10;
             this.takeOrderC2.Text = "Take Order";
             this.takeOrderC2.UseVisualStyleBackColor = false;
@@ -302,10 +282,9 @@
             this.compOrderC2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.compOrderC2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compOrderC2.ForeColor = System.Drawing.Color.White;
-            this.compOrderC2.Location = new System.Drawing.Point(153, 155);
-            this.compOrderC2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.compOrderC2.Location = new System.Drawing.Point(115, 126);
             this.compOrderC2.Name = "compOrderC2";
-            this.compOrderC2.Size = new System.Drawing.Size(159, 41);
+            this.compOrderC2.Size = new System.Drawing.Size(119, 33);
             this.compOrderC2.TabIndex = 10;
             this.compOrderC2.Text = "Complete Order";
             this.compOrderC2.UseVisualStyleBackColor = false;
@@ -315,10 +294,9 @@
             // 
             this.counter2label.AutoSize = true;
             this.counter2label.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.counter2label.Location = new System.Drawing.Point(32, 16);
-            this.counter2label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.counter2label.Location = new System.Drawing.Point(24, 13);
             this.counter2label.Name = "counter2label";
-            this.counter2label.Size = new System.Drawing.Size(107, 27);
+            this.counter2label.Size = new System.Drawing.Size(88, 21);
             this.counter2label.TabIndex = 7;
             this.counter2label.Text = "Counter 2";
             // 
@@ -329,10 +307,9 @@
             this.counter1panel.Controls.Add(this.compOrderC1);
             this.counter1panel.Controls.Add(this.takeOrderC1);
             this.counter1panel.Controls.Add(this.counter1label);
-            this.counter1panel.Location = new System.Drawing.Point(323, 32);
-            this.counter1panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.counter1panel.Location = new System.Drawing.Point(242, 26);
             this.counter1panel.Name = "counter1panel";
-            this.counter1panel.Size = new System.Drawing.Size(333, 213);
+            this.counter1panel.Size = new System.Drawing.Size(250, 173);
             this.counter1panel.TabIndex = 2;
             this.counter1panel.Paint += new System.Windows.Forms.PaintEventHandler(this.counter1panel_Paint);
             // 
@@ -340,10 +317,9 @@
             // 
             this.number1.AutoSize = true;
             this.number1.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number1.Location = new System.Drawing.Point(81, 71);
-            this.number1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.number1.Location = new System.Drawing.Point(61, 58);
             this.number1.Name = "number1";
-            this.number1.Size = new System.Drawing.Size(149, 46);
+            this.number1.Size = new System.Drawing.Size(118, 36);
             this.number1.TabIndex = 12;
             this.number1.Text = "Number";
             // 
@@ -352,10 +328,9 @@
             this.compOrderC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.compOrderC1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compOrderC1.ForeColor = System.Drawing.Color.White;
-            this.compOrderC1.Location = new System.Drawing.Point(157, 155);
-            this.compOrderC1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.compOrderC1.Location = new System.Drawing.Point(118, 126);
             this.compOrderC1.Name = "compOrderC1";
-            this.compOrderC1.Size = new System.Drawing.Size(159, 41);
+            this.compOrderC1.Size = new System.Drawing.Size(119, 33);
             this.compOrderC1.TabIndex = 9;
             this.compOrderC1.Text = "Complete Order";
             this.compOrderC1.UseVisualStyleBackColor = false;
@@ -366,10 +341,9 @@
             this.takeOrderC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.takeOrderC1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.takeOrderC1.ForeColor = System.Drawing.Color.White;
-            this.takeOrderC1.Location = new System.Drawing.Point(24, 155);
-            this.takeOrderC1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.takeOrderC1.Location = new System.Drawing.Point(18, 126);
             this.takeOrderC1.Name = "takeOrderC1";
-            this.takeOrderC1.Size = new System.Drawing.Size(125, 41);
+            this.takeOrderC1.Size = new System.Drawing.Size(94, 33);
             this.takeOrderC1.TabIndex = 8;
             this.takeOrderC1.Text = "Take Order";
             this.takeOrderC1.UseVisualStyleBackColor = false;
@@ -379,10 +353,9 @@
             // 
             this.counter1label.AutoSize = true;
             this.counter1label.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.counter1label.Location = new System.Drawing.Point(32, 16);
-            this.counter1label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.counter1label.Location = new System.Drawing.Point(24, 13);
             this.counter1label.Name = "counter1label";
-            this.counter1label.Size = new System.Drawing.Size(107, 27);
+            this.counter1label.Size = new System.Drawing.Size(88, 21);
             this.counter1label.TabIndex = 7;
             this.counter1label.Text = "Counter 1";
             // 
@@ -394,10 +367,9 @@
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(4, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(3, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(297, 597);
+            this.panel3.Size = new System.Drawing.Size(223, 485);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -406,10 +378,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(78, 547);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(58, 444);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 41);
+            this.button1.Size = new System.Drawing.Size(94, 33);
             this.button1.TabIndex = 13;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = false;
@@ -421,20 +392,18 @@
             this.panel7.Controls.Add(this.nowServ3);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.label5);
-            this.panel7.Location = new System.Drawing.Point(31, 404);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Location = new System.Drawing.Point(23, 328);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(228, 129);
+            this.panel7.Size = new System.Drawing.Size(171, 105);
             this.panel7.TabIndex = 2;
             // 
             // nowServ3
             // 
             this.nowServ3.AutoSize = true;
             this.nowServ3.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nowServ3.Location = new System.Drawing.Point(97, 47);
-            this.nowServ3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nowServ3.Location = new System.Drawing.Point(73, 38);
             this.nowServ3.Name = "nowServ3";
-            this.nowServ3.Size = new System.Drawing.Size(106, 40);
+            this.nowServ3.Size = new System.Drawing.Size(85, 32);
             this.nowServ3.TabIndex = 4;
             this.nowServ3.Text = "X-XXX";
             // 
@@ -442,10 +411,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(28, 36);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(21, 29);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 53);
+            this.label8.Size = new System.Drawing.Size(37, 43);
             this.label8.TabIndex = 6;
             this.label8.Text = "3";
             // 
@@ -453,10 +421,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 86);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(4, 70);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 27);
+            this.label5.Size = new System.Drawing.Size(73, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "Counter";
             // 
@@ -466,20 +433,18 @@
             this.panel6.Controls.Add(this.nowServ2);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(31, 236);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Location = new System.Drawing.Point(23, 192);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(228, 129);
+            this.panel6.Size = new System.Drawing.Size(171, 105);
             this.panel6.TabIndex = 2;
             // 
             // nowServ2
             // 
             this.nowServ2.AutoSize = true;
             this.nowServ2.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nowServ2.Location = new System.Drawing.Point(97, 41);
-            this.nowServ2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nowServ2.Location = new System.Drawing.Point(73, 33);
             this.nowServ2.Name = "nowServ2";
-            this.nowServ2.Size = new System.Drawing.Size(106, 40);
+            this.nowServ2.Size = new System.Drawing.Size(85, 32);
             this.nowServ2.TabIndex = 5;
             this.nowServ2.Text = "X-XXX";
             // 
@@ -487,10 +452,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Emoji", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 30);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(21, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 53);
+            this.label7.Size = new System.Drawing.Size(37, 43);
             this.label7.TabIndex = 4;
             this.label7.Text = "2";
             // 
@@ -498,10 +462,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 82);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(4, 67);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 27);
+            this.label6.Size = new System.Drawing.Size(73, 21);
             this.label6.TabIndex = 5;
             this.label6.Text = "Counter";
             // 
@@ -511,10 +474,9 @@
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.nowServ1);
-            this.panel5.Location = new System.Drawing.Point(31, 66);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Location = new System.Drawing.Point(23, 54);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(228, 129);
+            this.panel5.Size = new System.Drawing.Size(171, 105);
             this.panel5.TabIndex = 1;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
@@ -522,10 +484,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 81);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(4, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 27);
+            this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Counter";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -534,10 +495,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Emoji", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 28);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(21, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 53);
+            this.label3.Size = new System.Drawing.Size(37, 43);
             this.label3.TabIndex = 2;
             this.label3.Text = "1";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -546,10 +506,9 @@
             // 
             this.nowServ1.AutoSize = true;
             this.nowServ1.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nowServ1.Location = new System.Drawing.Point(97, 42);
-            this.nowServ1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nowServ1.Location = new System.Drawing.Point(73, 34);
             this.nowServ1.Name = "nowServ1";
-            this.nowServ1.Size = new System.Drawing.Size(106, 40);
+            this.nowServ1.Size = new System.Drawing.Size(85, 32);
             this.nowServ1.TabIndex = 1;
             this.nowServ1.Text = "X-XXX";
             this.nowServ1.Click += new System.EventHandler(this.label2_Click);
@@ -559,9 +518,8 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(296, 41);
+            this.panel4.Size = new System.Drawing.Size(222, 33);
             this.panel4.TabIndex = 0;
             // 
             // label1
@@ -569,24 +527,22 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(64, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(48, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 30);
+            this.label1.Size = new System.Drawing.Size(117, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Now Serving";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 693);
+            this.ClientSize = new System.Drawing.Size(1043, 563);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Home";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);

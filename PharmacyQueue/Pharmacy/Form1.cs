@@ -154,13 +154,50 @@ namespace PharmacyQueue
         {
             try
             {
-                // Change the path to the sound file as needed or change the name of the user like Woots -> your name
-                SoundPlayer player = new SoundPlayer("C:\\Users\\Woots\\source\\repos\\PharmacyQueue\\PharmacyQueue\\Pharmacy\\ding-47489.wav"); // Make sure the file is in your output directory
-                player.PlaySync(); // This will block until the sound finishes playing
+                // Try multiple possible locations for the sound file
+                string fileName = "ding-47489.wav";
+                string soundPath = null;
+                
+                // Possible locations to check
+                string[] possiblePaths = {
+                    // Direct in application folder
+                    System.IO.Path.Combine(Application.StartupPath, fileName),
+                    // In Pharmacy subfolder
+                    System.IO.Path.Combine(Application.StartupPath, "Pharmacy", fileName),
+                    // Relative to current directory
+                    fileName,
+                    // In parent directory
+                    System.IO.Path.Combine("..", fileName)
+                };
+                
+                // Find the first path that exists
+                foreach (string path in possiblePaths)
+                {
+                    if (System.IO.File.Exists(path))
+                    {
+                        soundPath = path;
+                        break;
+                    }
+                }
+                
+                // If we found a valid path, play the sound
+                if (!string.IsNullOrEmpty(soundPath))
+                {
+                    SoundPlayer player = new SoundPlayer(soundPath);
+                    player.PlaySync(); // This will block until the sound finishes playing
+                }
+                else
+                {
+                    // If no valid path was found, show an error
+                    MessageBox.Show("Could not find sound file in any of the expected locations.", 
+                        "Sound Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
-                // Optionally handle exceptions (e.g., file not found)
+                // Handle any other exceptions
+                MessageBox.Show("Error playing sound: " + ex.Message, 
+                    "Sound Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
