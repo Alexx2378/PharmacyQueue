@@ -197,6 +197,7 @@
             // number3
             // 
             this.number3.AutoSize = true;
+            this.number3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.number3.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number3.Location = new System.Drawing.Point(64, 58);
             this.number3.Name = "number3";
@@ -256,6 +257,7 @@
             // number2
             // 
             this.number2.AutoSize = true;
+            this.number2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.number2.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number2.Location = new System.Drawing.Point(66, 58);
             this.number2.Name = "number2";
@@ -316,6 +318,7 @@
             // number1
             // 
             this.number1.AutoSize = true;
+            this.number1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.number1.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number1.Location = new System.Drawing.Point(61, 58);
             this.number1.Name = "number1";

@@ -33,7 +33,10 @@ namespace PharmacyQueue
             InitializeComponent();
             this.adminFormInstance = adminForm;
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            
+            // Center the text in customerNum label
+            customerNum.TextAlign = ContentAlignment.MiddleCenter;
+            
             // Initialize the array for Now Serving labels
             nowServingLabels = new Label[] { null, nowServctmr1, nowServctmr2, nowServctmr3 };
         }
@@ -50,8 +53,20 @@ namespace PharmacyQueue
             GenerateQueueNumber(true);
         }
 
+        //customer panel
         private void GenerateQueueNumber(bool isPriority)
         {
+            // Check if all queues are full before generating a number
+            if (counter1Queue.Count >= MAX_QUEUE_SIZE &&
+                counter2Queue.Count >= MAX_QUEUE_SIZE &&
+                counter3Queue.Count >= MAX_QUEUE_SIZE)
+            {
+                customerNum.Text = "FULL";
+                MessageBox.Show("All counters are currently full. Please wait.", "Queue Full",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             int number = isPriority ? ++priorityNumber : ++regularNumber;
             string prefix = isPriority ? "P-" : "R-";
             string queueNumber = $"{prefix}{number:D3}";
@@ -75,6 +90,7 @@ namespace PharmacyQueue
                 counter2Queue.Count >= MAX_QUEUE_SIZE &&
                 counter3Queue.Count >= MAX_QUEUE_SIZE)
             {
+                customerNum.Text = "FULL";
                 MessageBox.Show("All counters are currently full. Please wait.", "Queue Full",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -83,9 +99,21 @@ namespace PharmacyQueue
             List<string> targetQueue = GetShortestQueue();
 
             if (isPriority)
-                targetQueue.Insert(0, queueNumber);
+            {
+                // Find the correct position to insert the new priority number
+                int insertIndex = 0;
+                while (insertIndex < targetQueue.Count && 
+                       targetQueue[insertIndex].StartsWith("P-") && 
+                       string.Compare(targetQueue[insertIndex], queueNumber) < 0)
+                {
+                    insertIndex++;
+                }
+                targetQueue.Insert(insertIndex, queueNumber);
+            }
             else
+            {
                 targetQueue.Add(queueNumber);
+            }
 
             UpdateAdminForm();
         }

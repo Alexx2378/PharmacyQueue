@@ -301,11 +301,12 @@
             // 
             this.customerNum.AutoSize = true;
             this.customerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 51.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNum.Location = new System.Drawing.Point(256, 162);
+            this.customerNum.Location = new System.Drawing.Point(252, 161);
             this.customerNum.Name = "customerNum";
             this.customerNum.Size = new System.Drawing.Size(284, 79);
             this.customerNum.TabIndex = 10;
             this.customerNum.Text = "Number";
+            this.customerNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.customerNum.Click += new System.EventHandler(this.customerNum_Click);
             // 
             // num
