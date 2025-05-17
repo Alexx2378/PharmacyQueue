@@ -150,16 +150,21 @@ namespace PharmacyQueue
 
         }
 
+        //changed part -- NEW --
         private void PlayDingSound()
         {
             try
             {
-                SoundPlayer player = new SoundPlayer("C:\\Users\\Formentera\\source\\repos\\PharmacyQueue\\PharmacyQueue\\Pharmacy\\ding-47489.wav"); // Make sure the file is in your output directory
-                player.PlaySync(); // This will block until the sound finishes playing
+                string soundPath = "ding-47489.wav";
+                using (var player = new SoundPlayer(soundPath))
+                {
+                    player.PlaySync();
+                }
             }
             catch (Exception ex)
             {
-                // Optionally handle exceptions (e.g., file not found)
+                MessageBox.Show("Error playing sound: " + ex.Message, "Sound Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -475,6 +480,11 @@ namespace PharmacyQueue
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

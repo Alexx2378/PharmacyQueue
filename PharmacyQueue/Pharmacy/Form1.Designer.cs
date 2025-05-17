@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.exit = new System.Windows.Forms.Label();
             this.pharmacy = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -87,7 +87,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.exit);
             this.panel1.Controls.Add(this.pharmacy);
             this.panel1.Location = new System.Drawing.Point(-3, -2);
             this.panel1.Name = "panel1";
@@ -107,17 +107,18 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // label11
+            // exit
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Maroon;
-            this.label11.Location = new System.Drawing.Point(1024, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(24, 26);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "X";
+            this.exit.AutoSize = true;
+            this.exit.BackColor = System.Drawing.Color.White;
+            this.exit.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit.ForeColor = System.Drawing.Color.Maroon;
+            this.exit.Location = new System.Drawing.Point(1024, 0);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(24, 26);
+            this.exit.TabIndex = 1;
+            this.exit.Text = "X";
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // pharmacy
             // 
@@ -588,7 +589,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel counter1panel;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label exit;
         private System.Windows.Forms.Label counter1label;
         private System.Windows.Forms.Panel counter3panel;
         private System.Windows.Forms.Label counter3label;

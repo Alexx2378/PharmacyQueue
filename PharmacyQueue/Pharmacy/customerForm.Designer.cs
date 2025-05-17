@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customerForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.exit_cus = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.exit_cus);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(-7, 0);
             this.panel2.Name = "panel2";
@@ -89,17 +89,18 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
+            // exit_cus
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(1027, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "X";
+            this.exit_cus.AutoSize = true;
+            this.exit_cus.BackColor = System.Drawing.Color.White;
+            this.exit_cus.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit_cus.ForeColor = System.Drawing.Color.Maroon;
+            this.exit_cus.Location = new System.Drawing.Point(1027, 0);
+            this.exit_cus.Name = "exit_cus";
+            this.exit_cus.Size = new System.Drawing.Size(24, 26);
+            this.exit_cus.TabIndex = 1;
+            this.exit_cus.Text = "X";
+            this.exit_cus.Click += new System.EventHandler(this.exit_cus_Click);
             // 
             // label2
             // 
@@ -386,7 +387,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label exit_cus;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
