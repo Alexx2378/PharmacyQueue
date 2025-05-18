@@ -150,6 +150,7 @@ namespace PharmacyQueue
 
         }
 
+        //Ding sound method
         private void PlayDingSound()
         {
             try
