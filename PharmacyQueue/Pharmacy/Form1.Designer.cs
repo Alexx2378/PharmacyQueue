@@ -157,6 +157,7 @@
             // 
             // counter3ListBox
             // 
+            this.counter3ListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.counter3ListBox.FormattingEnabled = true;
             this.counter3ListBox.Location = new System.Drawing.Point(534, -2);
             this.counter3ListBox.Name = "counter3ListBox";
@@ -165,6 +166,7 @@
             // 
             // counter2ListBox
             // 
+            this.counter2ListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.counter2ListBox.FormattingEnabled = true;
             this.counter2ListBox.Location = new System.Drawing.Point(267, -1);
             this.counter2ListBox.Name = "counter2ListBox";
@@ -173,6 +175,7 @@
             // 
             // counter1ListBox
             // 
+            this.counter1ListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.counter1ListBox.FormattingEnabled = true;
             this.counter1ListBox.Location = new System.Drawing.Point(0, 0);
             this.counter1ListBox.Name = "counter1ListBox";
@@ -182,7 +185,7 @@
             // 
             // counter3panel
             // 
-            this.counter3panel.BackColor = System.Drawing.Color.White;
+            this.counter3panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.counter3panel.Controls.Add(this.number3);
             this.counter3panel.Controls.Add(this.takeOrderC3);
             this.counter3panel.Controls.Add(this.compOrderC3);
@@ -240,7 +243,7 @@
             // 
             // counter2panel
             // 
-            this.counter2panel.BackColor = System.Drawing.Color.White;
+            this.counter2panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.counter2panel.Controls.Add(this.number2);
             this.counter2panel.Controls.Add(this.takeOrderC2);
             this.counter2panel.Controls.Add(this.compOrderC2);
@@ -255,7 +258,7 @@
             // 
             this.number2.AutoSize = true;
             this.number2.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number2.Location = new System.Drawing.Point(66, 58);
+            this.number2.Location = new System.Drawing.Point(61, 57);
             this.number2.Name = "number2";
             this.number2.Size = new System.Drawing.Size(118, 36);
             this.number2.TabIndex = 11;
@@ -300,7 +303,7 @@
             // 
             // counter1panel
             // 
-            this.counter1panel.BackColor = System.Drawing.Color.White;
+            this.counter1panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.counter1panel.Controls.Add(this.number1);
             this.counter1panel.Controls.Add(this.compOrderC1);
             this.counter1panel.Controls.Add(this.takeOrderC1);
@@ -315,7 +318,7 @@
             // 
             this.number1.AutoSize = true;
             this.number1.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number1.Location = new System.Drawing.Point(61, 58);
+            this.number1.Location = new System.Drawing.Point(63, 59);
             this.number1.Name = "number1";
             this.number1.Size = new System.Drawing.Size(118, 36);
             this.number1.TabIndex = 12;
@@ -386,7 +389,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.panel7.Controls.Add(this.nowServ3);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.label5);
@@ -427,7 +430,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.panel6.Controls.Add(this.nowServ2);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label6);
@@ -468,7 +471,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.nowServ1);
@@ -513,12 +516,13 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(222, 33);
             this.panel4.TabIndex = 0;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label1
             // 

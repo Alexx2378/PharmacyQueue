@@ -33,6 +33,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.admin1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admin1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -112,9 +114,20 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Pharmacy Queuing System";
             // 
+            // admin1
+            // 
+            this.admin1.Image = ((System.Drawing.Image)(resources.GetObject("admin1.Image")));
+            this.admin1.InitialImage = ((System.Drawing.Image)(resources.GetObject("admin1.InitialImage")));
+            this.admin1.Location = new System.Drawing.Point(705, 3);
+            this.admin1.Name = "admin1";
+            this.admin1.Size = new System.Drawing.Size(57, 61);
+            this.admin1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.admin1.TabIndex = 3;
+            this.admin1.TabStop = false;
+            // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.nowServctmr1);
@@ -179,7 +192,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.panel7.Controls.Add(this.nowServctmr3);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.label6);
@@ -220,7 +233,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.panel6.Controls.Add(this.nowServctmr2);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label12);
@@ -261,7 +274,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -270,7 +283,8 @@
             // 
             // counter1panel
             // 
-            this.counter1panel.BackColor = System.Drawing.Color.White;
+            this.counter1panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
+            this.counter1panel.Controls.Add(this.admin1);
             this.counter1panel.Controls.Add(this.AdminBtn);
             this.counter1panel.Controls.Add(this.customerNum);
             this.counter1panel.Controls.Add(this.num);
@@ -286,7 +300,7 @@
             this.AdminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.AdminBtn.Font = new System.Drawing.Font("Segoe UI Emoji", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminBtn.Location = new System.Drawing.Point(297, 248);
+            this.AdminBtn.Location = new System.Drawing.Point(301, 210);
             this.AdminBtn.Name = "AdminBtn";
             this.AdminBtn.Size = new System.Drawing.Size(157, 53);
             this.AdminBtn.TabIndex = 11;
@@ -298,7 +312,7 @@
             // 
             this.customerNum.AutoSize = true;
             this.customerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 51.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNum.Location = new System.Drawing.Point(241, 162);
+            this.customerNum.Location = new System.Drawing.Point(235, 121);
             this.customerNum.Name = "customerNum";
             this.customerNum.Size = new System.Drawing.Size(284, 79);
             this.customerNum.TabIndex = 10;
@@ -336,7 +350,7 @@
             this.prioritybttn.ForeColor = System.Drawing.Color.White;
             this.prioritybttn.Location = new System.Drawing.Point(113, 323);
             this.prioritybttn.Name = "prioritybttn";
-            this.prioritybttn.Size = new System.Drawing.Size(220, 66);
+            this.prioritybttn.Size = new System.Drawing.Size(217, 61);
             this.prioritybttn.TabIndex = 1;
             this.prioritybttn.Text = "Priority";
             this.prioritybttn.UseVisualStyleBackColor = false;
@@ -366,6 +380,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.admin1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -410,5 +425,6 @@
         private System.Windows.Forms.Button regularbttn;
         private System.Windows.Forms.Label customerNum;
         private System.Windows.Forms.Button AdminBtn;
+        private System.Windows.Forms.PictureBox admin1;
     }
 }
