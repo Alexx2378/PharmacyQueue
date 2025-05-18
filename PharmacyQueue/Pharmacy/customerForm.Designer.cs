@@ -183,7 +183,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.panel3.Controls.Add(this.AdminBtn);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
@@ -196,11 +195,11 @@
             // AdminBtn
             // 
             this.AdminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.AdminBtn.Font = new System.Drawing.Font("Segoe UI Emoji", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminBtn.Font = new System.Drawing.Font("Segoe UI Emoji", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminBtn.Location = new System.Drawing.Point(54, 444);
+            this.AdminBtn.Location = new System.Drawing.Point(314, 264);
             this.AdminBtn.Name = "AdminBtn";
-            this.AdminBtn.Size = new System.Drawing.Size(103, 32);
+            this.AdminBtn.Size = new System.Drawing.Size(157, 53);
             this.AdminBtn.TabIndex = 11;
             this.AdminBtn.Text = "Admin";
             this.AdminBtn.UseVisualStyleBackColor = false;
@@ -249,12 +248,8 @@
             // 
             // panel6
             // 
-<<<<<<< HEAD
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
-=======
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
->>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
             this.panel6.Controls.Add(this.nowServctmr2);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label12);
@@ -304,13 +299,9 @@
             // 
             // counter1panel
             // 
-<<<<<<< HEAD
-            this.counter1panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
+            this.counter1panel.BackColor = System.Drawing.Color.White;
             this.counter1panel.Controls.Add(this.admin1);
             this.counter1panel.Controls.Add(this.AdminBtn);
-=======
-            this.counter1panel.BackColor = System.Drawing.Color.White;
->>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
             this.counter1panel.Controls.Add(this.customerNum);
             this.counter1panel.Controls.Add(this.num);
             this.counter1panel.Controls.Add(this.regularbttn);
@@ -320,31 +311,11 @@
             this.counter1panel.Size = new System.Drawing.Size(765, 431);
             this.counter1panel.TabIndex = 2;
             // 
-<<<<<<< HEAD
-            // AdminBtn
-            // 
-            this.AdminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.AdminBtn.Font = new System.Drawing.Font("Segoe UI Emoji", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminBtn.Location = new System.Drawing.Point(301, 210);
-            this.AdminBtn.Name = "AdminBtn";
-            this.AdminBtn.Size = new System.Drawing.Size(157, 53);
-            this.AdminBtn.TabIndex = 11;
-            this.AdminBtn.Text = "Admin";
-            this.AdminBtn.UseVisualStyleBackColor = false;
-            this.AdminBtn.Click += new System.EventHandler(this.button1_Click);
-            // 
-=======
->>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
             // customerNum
             // 
             this.customerNum.AutoSize = true;
             this.customerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 51.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
-            this.customerNum.Location = new System.Drawing.Point(235, 121);
-=======
             this.customerNum.Location = new System.Drawing.Point(252, 161);
->>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
             this.customerNum.Name = "customerNum";
             this.customerNum.Size = new System.Drawing.Size(284, 79);
             this.customerNum.TabIndex = 10;

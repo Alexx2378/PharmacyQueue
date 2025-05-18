@@ -515,15 +515,13 @@ namespace PharmacyQueue
 
         }
 
-<<<<<<< HEAD
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
-=======
+        }
         private void label11_Click(object sender, EventArgs e)
         {
             Application.Exit();
->>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
         }
     }
 }
