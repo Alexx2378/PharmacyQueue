@@ -40,6 +40,7 @@
             this.nowServctmr1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.AdminBtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.nowServctmr3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.counter1panel = new System.Windows.Forms.Panel();
-            this.AdminBtn = new System.Windows.Forms.Button();
             this.customerNum = new System.Windows.Forms.Label();
             this.num = new System.Windows.Forms.Label();
             this.regularbttn = new System.Windows.Forms.Button();
@@ -95,6 +95,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(1027, 0);
@@ -102,6 +103,7 @@
             this.label1.Size = new System.Drawing.Size(24, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -181,6 +183,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
+            this.panel3.Controls.Add(this.AdminBtn);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
@@ -189,6 +192,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(223, 485);
             this.panel3.TabIndex = 0;
+            // 
+            // AdminBtn
+            // 
+            this.AdminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
+            this.AdminBtn.Font = new System.Drawing.Font("Segoe UI Emoji", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminBtn.ForeColor = System.Drawing.Color.White;
+            this.AdminBtn.Location = new System.Drawing.Point(54, 444);
+            this.AdminBtn.Name = "AdminBtn";
+            this.AdminBtn.Size = new System.Drawing.Size(103, 32);
+            this.AdminBtn.TabIndex = 11;
+            this.AdminBtn.Text = "Admin";
+            this.AdminBtn.UseVisualStyleBackColor = false;
+            this.AdminBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel7
             // 
@@ -233,7 +249,12 @@
             // 
             // panel6
             // 
+<<<<<<< HEAD
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
+=======
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+>>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
             this.panel6.Controls.Add(this.nowServctmr2);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label12);
@@ -283,9 +304,13 @@
             // 
             // counter1panel
             // 
+<<<<<<< HEAD
             this.counter1panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(248)))));
             this.counter1panel.Controls.Add(this.admin1);
             this.counter1panel.Controls.Add(this.AdminBtn);
+=======
+            this.counter1panel.BackColor = System.Drawing.Color.White;
+>>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
             this.counter1panel.Controls.Add(this.customerNum);
             this.counter1panel.Controls.Add(this.num);
             this.counter1panel.Controls.Add(this.regularbttn);
@@ -295,6 +320,7 @@
             this.counter1panel.Size = new System.Drawing.Size(765, 431);
             this.counter1panel.TabIndex = 2;
             // 
+<<<<<<< HEAD
             // AdminBtn
             // 
             this.AdminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
@@ -308,15 +334,22 @@
             this.AdminBtn.UseVisualStyleBackColor = false;
             this.AdminBtn.Click += new System.EventHandler(this.button1_Click);
             // 
+=======
+>>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
             // customerNum
             // 
             this.customerNum.AutoSize = true;
             this.customerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 51.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.customerNum.Location = new System.Drawing.Point(235, 121);
+=======
+            this.customerNum.Location = new System.Drawing.Point(252, 161);
+>>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
             this.customerNum.Name = "customerNum";
             this.customerNum.Size = new System.Drawing.Size(284, 79);
             this.customerNum.TabIndex = 10;
             this.customerNum.Text = "Number";
+            this.customerNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.customerNum.Click += new System.EventHandler(this.customerNum_Click);
             // 
             // num
@@ -370,9 +403,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 566);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1039, 566);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel8);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "customerForm";
             this.Text = "customerForm";

@@ -15,21 +15,30 @@ namespace PharmacyQueue
         // Static variables to keep track of queue numbers
         private static int regularNumber = 0;
         private static int priorityNumber = 0;
-        
+
         // Static lists to store queue data for each counter
         private static List<string> counter1Queue = new List<string>();
         private static List<string> counter2Queue = new List<string>();
         private static List<string> counter3Queue = new List<string>();
-        
+
         // Reference to the admin form and constants
         private readonly Home adminFormInstance;
         private const int MAX_QUEUE_SIZE = 10;
+
+        // Array for easier access to Now Serving labels
+        private Label[] nowServingLabels;
 
         public customerForm(Home adminForm)
         {
             InitializeComponent();
             this.adminFormInstance = adminForm;
-            this.StartPosition = FormStartPosition.CenterScreen; 
+            this.StartPosition = FormStartPosition.CenterScreen;
+            
+            // Center the text in customerNum label
+            customerNum.TextAlign = ContentAlignment.MiddleCenter;
+            
+            // Initialize the array for Now Serving labels
+            nowServingLabels = new Label[] { null, nowServctmr1, nowServctmr2, nowServctmr3 };
         }
 
         // Regular queue button click handler
@@ -44,72 +53,87 @@ namespace PharmacyQueue
             GenerateQueueNumber(true);
         }
 
+        //customer panel
         private void GenerateQueueNumber(bool isPriority)
         {
+            // Check if all queues are full before generating a number
+            if (counter1Queue.Count >= MAX_QUEUE_SIZE &&
+                counter2Queue.Count >= MAX_QUEUE_SIZE &&
+                counter3Queue.Count >= MAX_QUEUE_SIZE)
+            {
+                customerNum.Text = "FULL";
+                MessageBox.Show("All counters are currently full. Please wait.", "Queue Full",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             int number = isPriority ? ++priorityNumber : ++regularNumber;
             string prefix = isPriority ? "P-" : "R-";
             string queueNumber = $"{prefix}{number:D3}";
-            
+
             customerNum.Text = queueNumber;
             AddToShortestQueue(queueNumber, isPriority);
         }
 
         public void RefreshDisplays()
         {
-            // Reset the customer number display
             customerNum.Text = "Number";
-            
-            // Update any Now Serving displays if needed
-            UpdateNowServingLabel(1, nowServctmr1?.Text ?? "");
-            UpdateNowServingLabel(2, nowServctmr2?.Text ?? "");
-            UpdateNowServingLabel(3, nowServctmr3?.Text ?? "");
+            for (int i = 1; i <= 3; i++)
+            {
+                UpdateNowServingLabel(i, nowServingLabels[i]?.Text ?? "");
+            }
         }
 
         private void AddToShortestQueue(string queueNumber, bool isPriority)
         {
-            int counter1Count = counter1Queue.Count;
-            int counter2Count = counter2Queue.Count;
-            int counter3Count = counter3Queue.Count;
-            
-            if (counter1Count >= MAX_QUEUE_SIZE && counter2Count >= MAX_QUEUE_SIZE && counter3Count >= MAX_QUEUE_SIZE)
+            if (counter1Queue.Count >= MAX_QUEUE_SIZE &&
+                counter2Queue.Count >= MAX_QUEUE_SIZE &&
+                counter3Queue.Count >= MAX_QUEUE_SIZE)
             {
-                MessageBox.Show("All counters are currently full. Please wait.", "Queue Full", 
+                customerNum.Text = "FULL";
+                MessageBox.Show("All counters are currently full. Please wait.", "Queue Full",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
+
             List<string> targetQueue = GetShortestQueue();
-            
+
             if (isPriority)
             {
-                targetQueue.Insert(0, queueNumber);
+                // Find the correct position to insert the new priority number
+                int insertIndex = 0;
+                while (insertIndex < targetQueue.Count && 
+                       targetQueue[insertIndex].StartsWith("P-") && 
+                       string.Compare(targetQueue[insertIndex], queueNumber) < 0)
+                {
+                    insertIndex++;
+                }
+                targetQueue.Insert(insertIndex, queueNumber);
             }
             else
             {
                 targetQueue.Add(queueNumber);
             }
-            
+
             UpdateAdminForm();
         }
 
         private List<string> GetShortestQueue()
         {
-            int counter1Count = counter1Queue.Count;
-            int counter2Count = counter2Queue.Count;
-            int counter3Count = counter3Queue.Count;
-            
-            if (counter1Count <= counter2Count && counter1Count <= counter3Count && counter1Count < MAX_QUEUE_SIZE)
+            int[] counts = { counter1Queue.Count, counter2Queue.Count, counter3Queue.Count };
+            List<List<string>> queues = new List<List<string>> { counter1Queue, counter2Queue, counter3Queue };
+
+            int minIndex = -1;
+            int minCount = int.MaxValue;
+            for (int i = 0; i < 3; i++)
             {
-                return counter1Queue;
+                if (counts[i] < minCount && counts[i] < MAX_QUEUE_SIZE)
+                {
+                    minCount = counts[i];
+                    minIndex = i;
+                }
             }
-            else if (counter2Count <= counter3Count && counter2Count < MAX_QUEUE_SIZE)
-            {
-                return counter2Queue;
-            }
-            else
-            {
-                return counter3Queue;
-            }
+            return queues[minIndex];
         }
 
         private async void UpdateAdminForm()
@@ -123,108 +147,73 @@ namespace PharmacyQueue
             adminFormInstance.Show();
             this.Hide();
         }
-        
+
         public static void UpdateCounter1Queue(List<string> newQueue)
         {
             counter1Queue = new List<string>(newQueue);
         }
-        
+
         public static void UpdateCounter2Queue(List<string> newQueue)
         {
             counter2Queue = new List<string>(newQueue);
         }
-        
+
         public static void UpdateCounter3Queue(List<string> newQueue)
         {
             counter3Queue = new List<string>(newQueue);
         }
-        
+
         public void UpdateNowServingLabel(int counter, string number)
         {
-            // Check if the form is disposed or handle is not created
             if (this.IsDisposed || !this.IsHandleCreated)
-            {
                 return;
-            }
-        
-            // Ensure UI updates happen on the UI thread
+
             if (this.InvokeRequired)
             {
                 this.Invoke(new Action(() => UpdateNowServingLabel(counter, number)));
                 return;
             }
-        
-            switch(counter)
+
+            if (counter < 1 || counter > 3) return;
+
+            var label = nowServingLabels[counter];
+            if (label != null && label.Text != number)
             {
-                case 1:
-                    nowServctmr1.Text = number;
-                    if (!string.IsNullOrEmpty(number)) HighlightNowServing(1);
-                    break;
-                case 2:
-                    nowServctmr2.Text = number;
-                    if (!string.IsNullOrEmpty(number)) HighlightNowServing(2);
-                    break;
-                case 3:
-                    nowServctmr3.Text = number;
-                    if (!string.IsNullOrEmpty(number)) HighlightNowServing(3);
-                    break;
+                label.Text = number;
+                HighlightNowServing(counter);
             }
         }
 
-        private void customerNum_Click(object sender, EventArgs e)
-        {
-            // This event handler is required by the designer
-            // You can leave it empty if no specific action is needed
-        }
+        private void customerNum_Click(object sender, EventArgs e) { }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-            // This event handler is required by the designer
-            // You can leave it empty if no specific action is needed
-        }
+        private void label11_Click(object sender, EventArgs e) { }
 
         private void customerForm_Load(object sender, EventArgs e)
         {
-            // Initialize any required form settings or data
-            customerNum.Text = "Number";  // Set default text
-
-            // Remove the queue clearing code to preserve existing queue data
-            // counter1Queue.Clear();
-            // counter2Queue.Clear();
-            // counter3Queue.Clear();
-
-            // Synchronize Now Serving labels with admin form if available
+            customerNum.Text = "Number";
             if (adminFormInstance != null && !adminFormInstance.IsDisposed)
             {
                 nowServctmr1.Text = adminFormInstance.nowServ1.Text;
                 nowServctmr2.Text = adminFormInstance.nowServ2.Text;
                 nowServctmr3.Text = adminFormInstance.nowServ3.Text;
             }
-
-            // Set the form to start at the center of the screen
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void nowServctmr1_Click(object sender, EventArgs e)
-        {
-            // This event handler is required by the designer
-            // You can leave it empty if no specific action is needed
-        }
+        private void nowServctmr1_Click(object sender, EventArgs e) { }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                // If the admin form is still open, just hide this form
                 if (adminFormInstance != null && !adminFormInstance.IsDisposed)
                 {
-                    e.Cancel = true;  // Cancel the closing
-                    this.Hide();      // Hide instead
+                    e.Cancel = true;
+                    this.Hide();
                 }
                 else
                 {
-                    // If admin form is closed, allow this form to close
                     Application.Exit();
                 }
             }
@@ -232,46 +221,34 @@ namespace PharmacyQueue
 
         public void HighlightNowServing(int counter)
         {
-            Control control = null;
-            switch (counter)
-            {
-                case 1:
-                    control = nowServctmr1;
-                    break;
-                case 2:
-                    control = nowServctmr2;
-                    break;
-                case 3:
-                    control = nowServctmr3;
-                    break;
-            }
+            if (counter < 1 || counter > 3) return;
+            var control = nowServingLabels[counter];
+            if (control == null) return;
 
-            if (control != null)
+            Timer blinkTimer = new Timer();
+            int blinkCount = 0;
+            blinkTimer.Interval = 500;
+            blinkTimer.Tick += (s, args) =>
             {
-                Timer blinkTimer = new Timer();
-                int blinkCount = 0;
-
-                blinkTimer.Interval = 500; // Set the interval to 500 milliseconds
-                blinkTimer.Tick += (s, args) =>
+                if (blinkCount == 5)
                 {
-                    if (blinkCount == 5)
-                    {
-                        control.BackColor = SystemColors.Control; // Reset to default color
-                        blinkTimer.Stop();
-                        blinkTimer.Dispose();
-                    }
-                    else
-                    {
-                        control.BackColor = control.BackColor == Color.Yellow ? SystemColors.Control : Color.Yellow;
-                        blinkCount++;
-                    }
-                };
-
-                blinkTimer.Start();
-            }
+                    control.BackColor = SystemColors.Control;
+                    blinkTimer.Stop();
+                    blinkTimer.Dispose();
+                }
+                else
+                {
+                    control.BackColor = control.BackColor == Color.Yellow ? SystemColors.Control : Color.Yellow;
+                    blinkCount++;
+                }
+            };
+            blinkTimer.Start();
         }
 
-
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 

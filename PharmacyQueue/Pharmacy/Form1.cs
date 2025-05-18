@@ -154,12 +154,50 @@ namespace PharmacyQueue
         {
             try
             {
-                SoundPlayer player = new SoundPlayer("C:\\Users\\Formentera\\source\\repos\\PharmacyQueue\\PharmacyQueue\\Pharmacy\\ding-47489.wav"); // Make sure the file is in your output directory
-                player.PlaySync(); // This will block until the sound finishes playing
+                // Try multiple possible locations for the sound file
+                string fileName = "ding-47489.wav";
+                string soundPath = null;
+                
+                // Possible locations to check
+                string[] possiblePaths = {
+                    // Direct in application folder
+                    System.IO.Path.Combine(Application.StartupPath, fileName),
+                    // In Pharmacy subfolder
+                    System.IO.Path.Combine(Application.StartupPath, "Pharmacy", fileName),
+                    // Relative to current directory
+                    fileName,
+                    // In parent directory
+                    System.IO.Path.Combine("..", fileName)
+                };
+                
+                // Find the first path that exists
+                foreach (string path in possiblePaths)
+                {
+                    if (System.IO.File.Exists(path))
+                    {
+                        soundPath = path;
+                        break;
+                    }
+                }
+                
+                // If we found a valid path, play the sound
+                if (!string.IsNullOrEmpty(soundPath))
+                {
+                    SoundPlayer player = new SoundPlayer(soundPath);
+                    player.PlaySync(); // This will block until the sound finishes playing
+                }
+                else
+                {
+                    // If no valid path was found, show an error
+                    MessageBox.Show("Could not find sound file in any of the expected locations.", 
+                        "Sound Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
-                // Optionally handle exceptions (e.g., file not found)
+                // Handle any other exceptions
+                MessageBox.Show("Error playing sound: " + ex.Message, 
+                    "Sound Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -477,9 +515,15 @@ namespace PharmacyQueue
 
         }
 
+<<<<<<< HEAD
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+=======
+        private void label11_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+>>>>>>> 097a2f6e1637a11dba8fde1f0ae9badce50f5c68
         }
     }
 }
